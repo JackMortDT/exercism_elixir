@@ -1,21 +1,21 @@
-# ExercismElixir
+<h2 align="center">Elixir Exercism 🦎</h2>
 
-**TODO: Add description**
+[![codecov](https://codecov.io/gh/JackMortDT/exercism_elixir/branch/main/graph/badge.svg?token=H9LV4FVICY)](https://codecov.io/gh/JackMortDT/exercism_elixir)
+![Version](https://img.shields.io/badge/version-0.1.0-blue.svg?cacheSeconds=2592000)
 
-## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `exercism_elixir` to your list of dependencies in `mix.exs`:
+> Exercism solutions written in elixir
 
 ```elixir
-def deps do
-  [
-    {:exercism_elixir, "~> 0.1.0"}
-  ]
+def exercism(problem) do
+  problem
+  |> add_solution()
+  |> run(:tests)
+  |> upload_solution()
+  |> exercism(next_problem: true)
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/exercism_elixir>.
+## Learn more
 
+* exercism: https://exercism.org/tracks/elixir
