@@ -8,6 +8,8 @@ defmodule ExercismElixir.MixProject do
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+
+      # Tests
       test_coverage: [tool: ExCoveralls],
       preferred_cli_env: [
         coveralls: :test,
@@ -15,6 +17,17 @@ defmodule ExercismElixir.MixProject do
         "coveralls.post": :test,
         "coveralls.html": :test,
         "coveralls.json": :test
+      ],
+
+      # Documentation
+      name: "ExercismElixir",
+      source_url: "https://github.com/JackMortDT/exercism_elixir",
+      authors: ["JackMortDT"],
+      docs: [
+        # The main page in the docs
+        main: "ExercismElixir",
+        logo: "assets/Exercism-logo.svg.png",
+        extras: ["README.md"]
       ]
     ]
   end
@@ -28,7 +41,8 @@ defmodule ExercismElixir.MixProject do
   defp deps do
     [
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
-      {:excoveralls, "~> 0.10", only: :test}
+      {:excoveralls, "~> 0.10", only: :test},
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
     ]
   end
 end
