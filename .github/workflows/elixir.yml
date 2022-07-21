@@ -42,5 +42,5 @@ jobs:
       run: mix credo -a
     - name: Formats the given files
       run: mix format --check-formatted
-    - name: Coverage Codecov
-      uses: codecov/codecov-action@v3
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
