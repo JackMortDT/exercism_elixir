@@ -37,10 +37,15 @@ jobs:
     - name: Compile source files
       run: mix compile --warnings-as-errors --force
     - name: Run all tests
-      run: mix coveralls
+      run: mix coveralls.json
+      env:
+        MIX_ENV: test
     - name: Run code analysis
       run: mix credo -a
     - name: Formats the given files
       run: mix format --check-formatted
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v1
+    - name: Upload to Codecov
+      run: |
+        curl -Os https://uploader.codecov.io/latest/linux/codecov
+        chmod +x codecov
+        ./codecov
